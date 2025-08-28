@@ -1,0 +1,71 @@
+\documentclass[10pt]{exam}
+\usepackage{amsthm}
+\usepackage{libertine}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=0.25in, includefoot]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{multicol}
+\usepackage[shortlabels]{enumitem}
+\usepackage{cancel}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage{wrapfig, lipsum}
+\usepackage{chemformula}
+\usepackage{empheq}
+\usepackage[hypcap=false]{caption}
+\usepackage{subcaption}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue]{hyperref}
+% \usepackage[normalem]{ulem}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage{accents}
+\usepackage[T1]{fontenc}
+\usepackage[font=small,labelfont=bf,tableposition=top]{caption}
+\usepackage{siunitx}
+\usepackage{minted}
+\usepackage{etoolbox}
+\usepackage{multirow}
+\usepackage[version=4]{mhchem}
+\usepackage{pgfplots}
+\usepackage{svg}
+\usepackage{microtype}
+\usepackage{blindtext}
+\usepackage{booktabs}
+\usepackage{booktabs}
+\usepackage{pdfpages}
+\usepackage{nicematrix}
+
+\pgfplotsset{compat=1.18}
+
+
+\AtBeginEnvironment{minted}{
+\fontsize{8}{10}\selectfont}
+\newcommand{\fahrenheit}{^\circ{F}}
+\newcommand*\widefbox[1]{\fbox{\hspace{2em}#1\hspace{2em}}}
+\newcommand{\msout}[1]{
+    \text{\sout{$#1$}}
+}
+\usetikzlibrary{shapes}
+\DeclareSIUnit\year{y}
+\sisetup{
+group-digits=integer,
+group-minimum-digits=3,
+group-separator={,}
+}
+% \newcommand{\class}{NUEN 604 - 600}
+% \newcommand{\examnum}{Homework 1}
+% \newcommand{\examdate}{September 11\textsuperscript{th}}
+% \newcommand{\timelimit}{}
+% \newcommand{\laplace}{\mathcal{L}}
+
+\newcommand{\boxedanswer}[3][0.93]{
+    \fbox{
+        \begin{minipage}{#1\textwidth}
+            #2
+        \end{minipage}
+        }
+    }
+
