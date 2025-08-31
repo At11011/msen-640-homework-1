@@ -87,9 +87,8 @@ one side of the well?
       \frac{\sin(2\pi(\SI{0.2}{\nano\meter}))}{2\pi}\right) -
       \left(\SI{0.1}{\nano\meter} -
     \frac{\sin(2\pi(\SI{0.1}{\nano\meter}))}{2\pi}\right)\right] \\
-    \Aboxed{p &= 0.04218}
+    \Aboxed{p &= \input{./assets/q_2_6_1.tex}}
   \end{align*}
-
 }
 
 \pagebreak
@@ -195,7 +194,9 @@ interval $-1$ to $+1$?
         \int_0^{L_z} g^*(z)h(z) dz = 0 \tag{2.32}
       \end{align*}
 
-      Or on any other choice interval.
+      Or on any other choice interval. In other words, if the inner
+      product on a given interval is 0, then the two functions are
+      orthogonal on that interval.
 
       \begin{align*}
         \int_{-1}^1 (x)(x^2) dx &= 0 \\
@@ -242,12 +243,69 @@ somewhere further into the barrier?
   \begin{align*}
     \psi_{left}(z) &= C\exp(ikz) + D \exp(-ikz) \tag{2.40} \\
     k &= \sqrt{\frac{2mE}{\hbar^2}} \\
+    D &= \frac{k - ik}{k + ik}C \tag{2.47} \\
     \psi_{right}(z) &= G \exp(-\kappa z) \tag{2.43} \\
     \kappa &= \sqrt{\frac{2m(V_0 - E)}{\hbar^2}} \\
+    G &= \frac{2k}{k + i\kappa}C \tag{2.46} \\
   \end{align*}
+
+  Because we are only considering relative probability, we do not need to
+  normalize the wave function. So a value of $C = \SI{1}{\per\angstrom}$
+  will be chosen
+  for convenience. In addition, we only need to consider the
+  right-hand side of the
+  wave function.
+
+  \begin{align*}
+    % \psi_{left}(z) &= \exp\left(i\left[
+    % \sqrt{\frac{2mE}{\hbar^2}}\right]z\right) + \exp\left(-ik\left[
+    % \sqrt{\frac{2mE}{\hbar^2}}\right]z\right) \\
+    \psi_{right}(z) &= \frac{2k}{k + i\kappa}\exp(-\kappa z) \tag{2.43} \\
+    p_1 &= \int_0^l \psi_{right}(z) dz\\
+    p_1 &= \int_0^l\left|\frac{2k}{k + i\kappa}\exp(-\kappa z)\right|^2dz\\
+    p_1 &= \left|\frac{2k}{k +
+    i\kappa}\right|^2\int_0^l\exp(-2\kappa z)dz\\
+    p_1 &= \left|\frac{2k}{k +
+    i\kappa}\right|^2\left[\frac{\exp(-2\kappa z)}{-2\kappa}\right]_0^l\\
+    p_1 &= \left|\frac{2k}{k +
+    i\kappa}\right|^2\left[\frac{\exp(-2\kappa l)}{-2\kappa} -
+    \frac{1}{-2\kappa}\right]\\
+    p_2 &= \left|\frac{2k}{k +
+    i\kappa}\right|^2\left[-\frac{\exp(-2\kappa l)}{-2\kappa}\right]\\
+    &
+    \begin{aligned}
+      k &= \sqrt{\frac{2mE}{\hbar^2}} \\
+      \kappa &= \sqrt{\frac{2m(V_0 - E)}{\hbar^2}} \\
+      m &= \SI{9.109e-31}{\kilo\gram} \\
+      E &= \SI{0.5}{\electronvolt} = \SI{8.01e-23}{\joule} \\
+      \hbar &= \SI{1.054e-34}{\joule\second} \\
+      V_0 &= \SI{1}{\electronvolt} = \SI{1.602e-19}{\joule} \\
+    \end{aligned} \\
+  \end{align*}
+
 }
+
+\pagebreak
+
+\boxedanswersmall{
+
+  \begin{align*}
+    \Aboxed{p_1 &= \input{./assets/q_2_8_2_a.tex}} \\
+    \Aboxed{p_2 &=  \input{./assets/q_2_8_2_b.tex}}
+  \end{align*}
+
+  \input{./assets/q_2_8_2_conclusion.tex}
+
+  It is not significant that the "probabilities" are greater than one,
+  as we did not
+  normalize the wave function.
+}
+
 \section*{Supplemental Code}
 
-\inputminted{julia}{./calculations/calculations.jl}
+Any computational aid was provided using a programming language
+called \href{https://julialang.org}{Julia.} Source code is provided below.
+
+\inputminted{julia}{./calculations/src/calculations.jl}
 
 \end{document}
