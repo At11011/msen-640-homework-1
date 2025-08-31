@@ -1,14 +1,40 @@
 % Document class and basic setup
 \documentclass[10pt]{exam}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
+% \usepackage[utf8]{inputenc}
+% \usepackage[T1]{fontenc}
 
 % Page layout and geometry
 \usepackage[margin=0.25in, includefoot, includehead]{geometry}
 \usepackage{microtype}
 
-% Font packages
+% Font packages - XeLaTeX/LuaLaTeX vs pdfLaTeX compatibility
+\usepackage{ifxetex,ifluatex}
+\ifxetex
+\usepackage{fontspec}
+\setmainfont{Linux Libertine O}[
+  Ligatures=TeX,
+  Numbers=OldStyle
+]
+\setsansfont{Linux Biolinum O}[
+  Ligatures=TeX,
+  Numbers=OldStyle
+]
+% \setmonofont{Latin Modern Mono}[Scale=MatchLowercase]
+\setmonofont{DejaVu Sans Mono}[Scale=MatchLowercase]
+\else\ifluatex
+\usepackage{fontspec}
+\setmainfont{Linux Libertine O}[
+  Ligatures=TeX,
+  Numbers=OldStyle
+]
+\setsansfont{Linux Biolinum O}[
+  Ligatures=TeX,
+  Numbers=OldStyle
+]
+\setmonofont{Latin Modern Mono}[Scale=MatchLowercase]
+\else
 \usepackage{libertine}
+\fi\fi
 
 % Math packages
 \usepackage{amsmath,amssymb,amsthm}
@@ -23,10 +49,13 @@
 % Graphics and figures
 \usepackage{graphicx}
 \usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
 \usetikzlibrary{shapes}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
-\usepackage{svg}
+% \usepackage{svg}
+\usepackage{graphicx}
 \usepackage{float}
 \usepackage{wrapfig}
 

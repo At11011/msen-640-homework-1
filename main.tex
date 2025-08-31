@@ -1,12 +1,11 @@
-\input{main.sty}
-
+\input{./src/main.sty}
 % Additional SI unit for Fahrenheit
 \DeclareSIUnit\fahrenheit{\degree F}
 
 \begin{document}
 
 % Include title page
-\input{titlepage.tex}
+\input{./src/titlepage.tex}
 
 \pagebreak
 
@@ -16,26 +15,25 @@ Which of the following differential equations is linear, in the sense
 that, if some function $\psi(z)$ is a
 solution (and this may well be a different function for each equation
 below), so also is the function
-$\phi(z) = a\psi(z)$, where $a$ is an arbitrary constant? Justify your answers.
+$\psi(z) = a\psi(z)$, where $a$ is an arbitrary constant? Justify your answers.
 
 \begin{enumerate}[(i)]
   \item $z\frac{d\psi(z)}{dz} + g(z)\psi(z) = 0$ where $g(z)$ is some
     specific function
 
     \boxedanswersmall{
-      Some answer:
-      \begin{align*}
-        1 + 1 = 2
-      \end{align*}
+
+      This equation is linear, as the term $\psi(z)$ does not appear in any
+      order higher than first order. As a result, $\psi(z)$ and $a\psi(z)$ are
+      both valid solutions, given that $a$ is some constant.
     }
 
   \item $\psi(z)\frac{d\psi(z)}{dz} + \psi(z) = 0$
 
     \boxedanswersmall{
-      Some answer:
-      \begin{align*}
-        1 + 1 = 2
-      \end{align*}
+      This equation is not linear. The term $\psi(z)\frac{d\psi(z)}{dz}$ is not
+      first order in $\psi$. As a result, $\psi(z)$ and $a\psi(z)$ may not both
+      be valid solutions, given that $a$ is some constant.
     }
 
 \end{enumerate}
@@ -52,10 +50,46 @@ electron between \SI{0.1}{\nano\meter} and \SI{0.2}{\nano\meter} from
 one side of the well?
 
 \boxedanswer{
-  Some answer:
+  \centering
+  \input{./src/well_figure.tex}
+  \vspace{0.5em}
+  \captionof{figure}{Graph of the ground-state wavefunction for an electron
+  positioned within an infinite-potential \SI{1}{\nano\meter} well.}
+
   \begin{align*}
-    1 + 1 = 2
+    p &= \int_{z_1}^{z_2} |\psi_1(z)|^2dz \\
+    &
+    \begin{aligned}
+      \psi_n(z) &= \frac{2}{L_z}\sin\left(\frac{n\pi z}{L_z}\right)
+      \\
+      &
+      \begin{aligned}
+        L_z &= \SI{1}{\nano\meter} \\
+        n &= 1 \\
+      \end{aligned} \\
+      \psi_n(z) &=
+      \frac{2}{(\SI{1}{\nano\meter})}\sin\left(\frac{(1)\pi
+      z}{(\SI{1}{\nano\meter})}\right) \\
+      \psi_n(z) &= 2\sin\left(\pi z\right) \\
+    \end{aligned} \\
+    p &= \int_{z_1}^{z_2} 2\sin^2\left(\pi z\right)dz \\
+    p &= \int_{z_1}^{z_2} 2[1 - \cos^2\left(\pi z\right)]dz \\
+    &
+    \begin{aligned}
+      \cos^2\left(\pi z\right) &= \frac{\cos2\theta}{2} + \frac{1}{2} \\
+      z_1 &= \SI{0.1}{\nano\meter} \\
+      z_2 &= \SI{0.2}{\nano\meter} \\
+    \end{aligned} \\
+    p &= \int_{z_1}^{z_2} [1 - \cos\left(2\pi z\right)]dz \\
+    p &= \left[z - \frac{\sin(2\pi
+    z)}{2\pi}\right]_{\SI{1}{\nano\meter}}^{\SI{0.2}{\nano\meter}} \\
+    p &= \left[\left(\SI{0.2}{\nano\meter} -
+      \frac{\sin(2\pi(\SI{0.2}{\nano\meter}))}{2\pi}\right) -
+      \left(\SI{0.1}{\nano\meter} -
+    \frac{\sin(2\pi(\SI{0.1}{\nano\meter}))}{2\pi}\right)\right] \\
+    \Aboxed{p &= 0.04218}
   \end{align*}
+
 }
 
 \pagebreak
@@ -72,19 +106,25 @@ is even or odd.
   \item $\sin(x)$
 
     \boxedanswersmall{
-      Some answer:
-      \begin{align*}
-        1 + 1 = 2
-      \end{align*}
+      \centering
+      \input{./src/sin_figure.tex}
+      \vspace{0.5em}
+      \captionof{figure}{Graph of $y = \sin(x)$.}
+
+      $\sin(x)$ has a definite parity around $x = 0$. $\sin(x) =
+      -\sin(-x)$, meaning that $\sin(x)$ is an odd function.
+
     }
 
   \item $\exp(ix)$
 
     \boxedanswersmall{
-      Some answer:
-      \begin{align*}
-        1 + 1 = 2
-      \end{align*}
+      \centering
+      \input{./src/exp_figure.tex}
+      \vspace{0.5em}
+      \captionof{figure}{Graph of $y = \exp(ix) = \cos(x) +
+        i\sin(x)$, with the imaginary portion of $e^{ix}$ represented
+      as $\operatorname{Im}(e^{ix})$.}
     }
 
 \end{enumerate}
@@ -99,25 +139,41 @@ the $z$ direction (i.e., the potential energy is infinite for $z < 0$ and
   for $z > L_z$, and, for simplicity, zero
 for other values of $z$). For each of the following functions, in
 exactly the form stated, is this function
-a solution of the time-independent Schrödinger equation?
+a solution of the time-independent Schr\"odinger equation?
 
 \begin{enumerate}[(i)]
   \item $\sin(7\pi z / L_z)$
 
     \boxedanswersmall{
-      Some answer:
-      \begin{align*}
-        1 + 1 = 2
-      \end{align*}
+      \centering
+      \input{./src/fig_2_6_3_a.tex}
+      \vspace{0.5em}
+      \captionof{figure}{Graph of $\psi(z) = \sin\left(\frac{7\pi
+      z}{L_z}\right)$}
+
+      This fits the general (unnormalized) solution of the particle
+      in an infinite well:
+
+      \begin{equation*}
+        \psi_n(z) = A_n\sin\left(\frac{n\pi
+        z}{L_z}\right) \tag{2.25}
+      \end{equation*}
     }
 
   \item $\cos(2\pi z / L_z)$
 
     \boxedanswersmall{
-      Some answer:
-      \begin{align*}
-        1 + 1 = 2
-      \end{align*}
+      \centering
+      \input{./src/fig_2_6_3_b.tex}
+      \vspace{0.5em}
+      \captionof{figure}{Graph of $\psi(z) = \cos\left(\frac{2\pi
+      z}{L_z}\right)$.}
+
+      This expression violates the the boundary conditions of the infinite well
+      potential. Specifically, that the wavefunction should be zero
+      at the walls.
+      This expression has a value of 1 at both walls, therefore it is
+      not a solution to the time-independent Schr\"odinger equation.
     }
 
 \end{enumerate}
@@ -133,19 +189,39 @@ interval $-1$ to $+1$?
   \item[(i)] $x, x^2$
 
     \boxedanswersmall{
-      Some answer:
+
+      Orthogonality is defined as follows:
       \begin{align*}
-        1 + 1 = 2
+        \int_0^{L_z} g^*(z)h(z) dz = 0 \tag{2.32}
       \end{align*}
+
+      Or on any other choice interval.
+
+      \begin{align*}
+        \int_{-1}^1 (x)(x^2) dx &= 0 \\
+        \int_{-1}^1 x^3 dx &= 0 \\
+        \left[\frac{x^4}{4}\right]_{-1}^1 &= 0 \\
+        \left[(1)^4 - (-1)^4\right]_{-1}^1 &= 0 \\
+        \Aboxed{0 &= 0}
+      \end{align*}
+
+      $x$ and $x^2$ are orthogonal on $[-1, 1]$
+
     }
 
   \item[(v)] $\exp(-2\pi ix), \exp(2\pi ix)$
 
     \boxedanswersmall{
-      Some answer:
       \begin{align*}
-        1 + 1 = 2
+        \int_{-1}^1 (\exp(-2\pi ix))(\exp(2\pi ix)) dx &= 0 \\
+        \int_{-1}^1 \exp(-2\pi ix + 2\pi ix) dx &= 0 \\
+        \int_{-1}^1 \exp(0) dx &= 0 \\
+        \int_{-1}^1 1 dx &= 0 \\
+        \left[x\right]_{-1}^1 &= 0 \\
+        \left[1 - (-1)\right] &= 0 \\
+        \Aboxed{2 &\ne 0} \\
       \end{align*}
+      $\exp(-2\pi ix)$ and $\exp(2\pi ix)$ are not orthogonal on $[-1, 1]$
     }
 
 \end{enumerate}
@@ -161,10 +237,17 @@ first \SI{1}{\angstrom} of the barrier, or (b)
 somewhere further into the barrier?
 
 \boxedanswer{
-  Some answer:
+  This can be determined by looking at the solution to this problem provided by:
+
   \begin{align*}
-    1 + 1 = 2
+    \psi_{left}(z) &= C\exp(ikz) + D \exp(-ikz) \tag{2.40} \\
+    k &= \sqrt{\frac{2mE}{\hbar^2}} \\
+    \psi_{right}(z) &= G \exp(-\kappa z) \tag{2.43} \\
+    \kappa &= \sqrt{\frac{2m(V_0 - E)}{\hbar^2}} \\
   \end{align*}
 }
+\section*{Supplemental Code}
+
+\inputminted{julia}{./calculations/calculations.jl}
 
 \end{document}
