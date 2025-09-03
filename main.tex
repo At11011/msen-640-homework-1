@@ -9,303 +9,304 @@
 
 \pagebreak
 
-\section*{Problem 2.4.1}
+\section*{Problem 1}
 
-Which of the following differential equations is linear, in the sense
-that, if some function $\psi(z)$ is a
-solution (and this may well be a different function for each equation
-below), so also is the function
-$\psi(z) = a\psi(z)$, where $a$ is an arbitrary constant? Justify your answers.
+What name (optionally, pronouns) would you prefer to be called by in this class?
 
-\begin{enumerate}[(i)]
-  \item $z\frac{d\psi(z)}{dz} + g(z)\psi(z) = 0$ where $g(z)$ is some
-    specific function
+\boxedanswer{Nathaniel Thomas. I go by Nathaniel.}
 
-    \boxedanswersmall{
+\section*{Problem 2}
 
-      This equation is linear, as the term $\psi(z)$ does not appear in any
-      order higher than first order. As a result, $\psi(z)$ and $a\psi(z)$ are
-      both valid solutions, given that $a$ is some constant.
-    }
+What sort of materials systems are you most interested in?
 
-  \item $\psi(z)\frac{d\psi(z)}{dz} + \psi(z) = 0$
+\boxedanswer{I am interested in solid mechanics. Specifically, nuclear materials
+in extreme environments (corrosive, high radiation environments).}
 
-    \boxedanswersmall{
-      This equation is not linear. The term $\psi(z)\frac{d\psi(z)}{dz}$ is not
-      first order in $\psi$. As a result, $\psi(z)$ and $a\psi(z)$ may not both
-      be valid solutions, given that $a$ is some constant.
-    }
+\section*{Problem 3}
 
-\end{enumerate}
-
-\pagebreak
-
-\section*{Problem 2.6.1}
-
-An electron is in a potential well of thickness \SI{1}{\nano\meter},
-with infinitely high potential barriers on either
-side. It is in the lowest possible energy state in this well. What
-would be the probability of finding the
-electron between \SI{0.1}{\nano\meter} and \SI{0.2}{\nano\meter} from
-one side of the well?
+What is your undergraduate degree in?
 
 \boxedanswer{
-  \centering
-  \input{./src/well_figure.tex}
-  \vspace{0.5em}
-  \captionof{figure}{Graph of the ground-state wavefunction for an electron
-  positioned within an infinite-potential \SI{1}{\nano\meter} well.}
-
-  \begin{align*}
-    p &= \int_{z_1}^{z_2} |\psi_1(z)|^2dz \\
-    &
-    \begin{aligned}
-      \psi_n(z) &= \frac{2}{L_z}\sin\left(\frac{n\pi z}{L_z}\right)
-      \\
-      &
-      \begin{aligned}
-        L_z &= \SI{1}{\nano\meter} \\
-        n &= 1 \\
-      \end{aligned} \\
-      \psi_n(z) &=
-      \frac{2}{(\SI{1}{\nano\meter})}\sin\left(\frac{(1)\pi
-      z}{(\SI{1}{\nano\meter})}\right) \\
-      \psi_n(z) &= 2\sin\left(\pi z\right) \\
-    \end{aligned} \\
-    p &= \int_{z_1}^{z_2} 2\sin^2\left(\pi z\right)dz \\
-    p &= \int_{z_1}^{z_2} 2[1 - \cos^2\left(\pi z\right)]dz \\
-    &
-    \begin{aligned}
-      \cos^2\left(\pi z\right) &= \frac{\cos2\theta}{2} + \frac{1}{2} \\
-      z_1 &= \SI{0.1}{\nano\meter} \\
-      z_2 &= \SI{0.2}{\nano\meter} \\
-    \end{aligned} \\
-    p &= \int_{z_1}^{z_2} [1 - \cos\left(2\pi z\right)]dz \\
-    p &= \left[z - \frac{\sin(2\pi
-    z)}{2\pi}\right]_{\SI{1}{\nano\meter}}^{\SI{0.2}{\nano\meter}} \\
-    p &= \left[\left(\SI{0.2}{\nano\meter} -
-      \frac{\sin(2\pi(\SI{0.2}{\nano\meter}))}{2\pi}\right) -
-      \left(\SI{0.1}{\nano\meter} -
-    \frac{\sin(2\pi(\SI{0.1}{\nano\meter}))}{2\pi}\right)\right] \\
-    \Aboxed{p &= \input{./assets/q_2_6_1.tex}}
-  \end{align*}
+  Chemical Engineering
 }
 
 \pagebreak
 
-\section*{Problem 2.6.2}
+\section*{Problem 4}
 
-Which of the following functions have a definite parity relative to
-the point $x = 0$ (i.e., we are
-interested in their symmetry relative to $x = 0$)? For those that
-have a definite parity, state whether it
-is even or odd.
-
-\begin{enumerate}[(i)]
-  \item $\sin(x)$
-
-    \boxedanswersmall{
-      \centering
-      \input{./src/sin_figure.tex}
-      \vspace{0.5em}
-      \captionof{figure}{Graph of $y = \sin(x)$.}
-
-      $\sin(x)$ has a definite parity around $x = 0$. $\sin(x) =
-      -\sin(-x)$, meaning that $\sin(x)$ is an odd function.
-
-    }
-
-  \item $\exp(ix)$
-
-    \boxedanswersmall{
-      \centering
-      \input{./src/exp_figure.tex}
-      \vspace{0.5em}
-      \captionof{figure}{Graph of $y = \exp(ix) = \cos(x) +
-        i\sin(x)$, with the imaginary portion of $e^{ix}$ represented
-      as $\operatorname{Im}(e^{ix})$.}
-    }
-
-\end{enumerate}
-
-\pagebreak
-
-\section*{Problem 2.6.3}
-
-Consider the problem of an electron in a one-dimensional "infinite"
-potential well of width $L_z$ in
-the $z$ direction (i.e., the potential energy is infinite for $z < 0$ and
-  for $z > L_z$, and, for simplicity, zero
-for other values of $z$). For each of the following functions, in
-exactly the form stated, is this function
-a solution of the time-independent Schr\"odinger equation?
-
-\begin{enumerate}[(i)]
-  \item $\sin(7\pi z / L_z)$
-
-    \boxedanswersmall{
-      \centering
-      \input{./src/fig_2_6_3_a.tex}
-      \vspace{0.5em}
-      \captionof{figure}{Graph of $\psi(z) = \sin\left(\frac{7\pi
-      z}{L_z}\right)$}
-
-      This fits the general (unnormalized) solution of the particle
-      in an infinite well:
-
-      \begin{equation*}
-        \psi_n(z) = A_n\sin\left(\frac{n\pi
-        z}{L_z}\right) \tag{2.25}
-      \end{equation*}
-    }
-
-  \item $\cos(2\pi z / L_z)$
-
-    \boxedanswersmall{
-      \centering
-      \input{./src/fig_2_6_3_b.tex}
-      \vspace{0.5em}
-      \captionof{figure}{Graph of $\psi(z) = \cos\left(\frac{2\pi
-      z}{L_z}\right)$.}
-
-      This expression violates the the boundary conditions of the infinite well
-      potential. Specifically, that the wavefunction should be zero
-      at the walls.
-      This expression has a value of 1 at both walls, therefore it is
-      not a solution to the time-independent Schr\"odinger equation.
-    }
-
-\end{enumerate}
-
-\pagebreak
-
-\section*{Problem 2.7.1}
-
-Which of the following pairs of functions are orthogonal on the
-interval $-1$ to $+1$?
-
-\begin{enumerate}
-  \item[(i)] $x, x^2$
-
-    \boxedanswersmall{
-
-      Orthogonality is defined as follows:
-      \begin{align*}
-        \int_0^{L_z} g^*(z)h(z) dz = 0 \tag{2.32}
-      \end{align*}
-
-      Or on any other choice interval. In other words, if the inner
-      product on a given interval is 0, then the two functions are
-      orthogonal on that interval.
-
-      \begin{align*}
-        \int_{-1}^1 (x)(x^2) dx &= 0 \\
-        \int_{-1}^1 x^3 dx &= 0 \\
-        \left[\frac{x^4}{4}\right]_{-1}^1 &= 0 \\
-        \left[(1)^4 - (-1)^4\right]_{-1}^1 &= 0 \\
-        \Aboxed{0 &= 0}
-      \end{align*}
-
-      $x$ and $x^2$ are orthogonal on $[-1, 1]$
-
-    }
-
-  \item[(v)] $\exp(-2\pi ix), \exp(2\pi ix)$
-
-    \boxedanswersmall{
-      \begin{align*}
-        \int_{-1}^1 (\exp(-2\pi ix))(\exp(2\pi ix)) dx &= 0 \\
-        \int_{-1}^1 \exp(-2\pi ix + 2\pi ix) dx &= 0 \\
-        \int_{-1}^1 \exp(0) dx &= 0 \\
-        \int_{-1}^1 1 dx &= 0 \\
-        \left[x\right]_{-1}^1 &= 0 \\
-        \left[1 - (-1)\right] &= 0 \\
-        \Aboxed{2 &\ne 0} \\
-      \end{align*}
-      $\exp(-2\pi ix)$ and $\exp(2\pi ix)$ are not orthogonal on $[-1, 1]$
-    }
-
-\end{enumerate}
-
-\pagebreak
-
-\section*{Problem 2.8.2}
-
-An electron wave of energy \SI{0.5}{\electronvolt} is incident on an
-infinitely thick potential barrier of height
-\SI{1}{\electronvolt}. Is the electron more likely to be found (a) within the
-first \SI{1}{\angstrom} of the barrier, or (b)
-somewhere further into the barrier?
+Do you have any programming experience? If so, which language(s)?
 
 \boxedanswer{
-  This can be determined by looking at the solution to this problem provided by:
+  Yes. I am most proficient in:
 
-  \begin{align*}
-    \psi_{left}(z) &= C\exp(ikz) + D \exp(-ikz) \tag{2.40} \\
-    k &= \sqrt{\frac{2mE}{\hbar^2}} \\
-    D &= \frac{k - ik}{k + ik}C \tag{2.47} \\
-    \psi_{right}(z) &= G \exp(-\kappa z) \tag{2.43} \\
-    \kappa &= \sqrt{\frac{2m(V_0 - E)}{\hbar^2}} \\
-    G &= \frac{2k}{k + i\kappa}C \tag{2.46} \\
-  \end{align*}
+  \begin{enumerate}
+    \item C++
+    \item C
+    \item Rust
+    \item Julia
+    \item Python
+    \item MATLAB
+    \item LaTeX
+  \end{enumerate}
 
-  Because we are only considering relative probability, we do not need to
-  normalize the wave function. So a value of $C = \SI{1}{\per\angstrom}$
-  will be chosen
-  for convenience. In addition, we only need to consider the
-  right-hand side of the
-  wave function.
+  With some experience in:
 
-  \begin{align*}
-    % \psi_{left}(z) &= \exp\left(i\left[
-    % \sqrt{\frac{2mE}{\hbar^2}}\right]z\right) + \exp\left(-ik\left[
-    % \sqrt{\frac{2mE}{\hbar^2}}\right]z\right) \\
-    \psi_{right}(z) &= \frac{2k}{k + i\kappa}\exp(-\kappa z) \tag{2.43} \\
-    p_1 &= \int_0^l \psi_{right}(z) dz\\
-    p_1 &= \int_0^l\left|\frac{2k}{k + i\kappa}\exp(-\kappa z)\right|^2dz\\
-    p_1 &= \left|\frac{2k}{k +
-    i\kappa}\right|^2\int_0^l\exp(-2\kappa z)dz\\
-    p_1 &= \left|\frac{2k}{k +
-    i\kappa}\right|^2\left[\frac{\exp(-2\kappa z)}{-2\kappa}\right]_0^l\\
-    p_1 &= \left|\frac{2k}{k +
-    i\kappa}\right|^2\left[\frac{\exp(-2\kappa l)}{-2\kappa} -
-    \frac{1}{-2\kappa}\right]\\
-    p_2 &= \left|\frac{2k}{k +
-    i\kappa}\right|^2\left[-\frac{\exp(-2\kappa l)}{-2\kappa}\right]\\
-    &
-    \begin{aligned}
-      k &= \sqrt{\frac{2mE}{\hbar^2}} \\
-      \kappa &= \sqrt{\frac{2m(V_0 - E)}{\hbar^2}} \\
-      m &= \SI{9.109e-31}{\kilo\gram} \\
-      E &= \SI{0.5}{\electronvolt} = \SI{8.01e-23}{\joule} \\
-      \hbar &= \SI{1.054e-34}{\joule\second} \\
-      V_0 &= \SI{1}{\electronvolt} = \SI{1.602e-19}{\joule} \\
-    \end{aligned} \\
-  \end{align*}
+  \begin{enumerate}
+    \item Javascript
+    \item FORTRAN
+    \item Dart
+    \item Java
+    \item C\#
+    \item x86 assembly
+    \item WGSL
+    \item Visual Basic
+    \item QuickBASIC
+  \end{enumerate}
 
 }
 
 \pagebreak
+\section*{Problem 5}
 
-\boxedanswersmall{
+Evaluate the following derivatives:
+\begin{enumerate}[a.]
+  \item $\frac{d\Pi}{d\rho}$ where $\Pi(\rho) = \sum_{n=0}^\infty  A_n
+    \rho^n; \{ A_n \}$ are real constants (these are related to
+    "virial coefficients")
 
+    \boxedanswer{
+      Apply the power rule to the formula for $\Pi(\rho)$:
+
+      \begin{align*}
+        \frac{d\Pi}{d\rho} &= \sum_{n=1}^\infty A_n\cdot n \rho^{n-1}
+      \end{align*}
+
+      Note that the $n=0$ term disappears because it is constant.
+    }
+
+  \item $\frac{df}{d\phi}$ where $f(\phi) = \phi \ln\phi + (1 - \phi)
+    \ln (1 - \phi) + \chi \phi(1 - \phi)$
+
+    \boxedanswer{
+      \begin{align*}
+        f(\phi) &= \overbrace{\phi \ln\phi}^{A} +
+        \overbrace{(1 - \phi)
+        \ln (1 - \phi)}^{B} + \overbrace{\chi \phi(1 - \phi)}^{C} \\
+        \frac{df}{d\phi} &= \overbrace{(1)(\ln\phi) +
+        (\phi)\left(\frac{1}{\phi}\right)}^{dA/d\phi} \\
+        &  \overbrace{(-1)\ln(1 - \phi) + (1 - \phi)\left(\frac{-1}{1 -
+        \phi}\right)}^{dB/d\phi} \\
+        & \overbrace{\chi\left[(1)(1 - \phi) + (\phi)(-1)\right]}^{dC/d\phi} \\
+        \Aboxed{\frac{df}{d\phi} &= \ln\left(\frac{\phi}{1 - \phi}\right) +
+        \chi(1 - 2\phi)}
+      \end{align*}
+    }
+  \item $\frac{d^2 f}{d\phi^2}$ where $f(\phi) = \phi\ln\phi + (1 -
+    \phi)\ln(1 - \phi) + \chi\phi(1 - \phi)$
+
+    \boxedanswer{
+      \label{first_deriv}
+
+      Differentiate the answer from part \ref{first_deriv}
+
+      \begin{align*}
+        \frac{d^2 f}{d\phi^2} &= \frac{d}{d\phi}\left[
+          \ln\left(\frac{\phi}{1 - \phi}\right) +
+        \chi(1 - 2\phi)\right] \\
+        \frac{d^2 f}{d\phi^2} &= \frac{1 - \phi}{\phi}
+        \frac{d}{dx}\left[\frac{x}{1 - x}\right] \\
+        \frac{d^2 f}{d\phi^2} &= \frac{1 - \phi}{\phi}
+        \left[\frac{(1)(1 - \phi) - (\phi)(-1)}{(1 - \phi)^2}\right] \\
+        \frac{d^2 f}{d\phi^2} &= \frac{1 - \phi}{\phi}
+        \left[\frac{1}{(1 - \phi)^2}\right] \\
+        \Aboxed{\frac{d^2 f}{d\phi^2} &= \frac{1 - \phi}{\phi(1 - \phi)^2} }
+      \end{align*}
+    }
+
+  \item $\left(\frac{\delta f}{\delta x}\right)_y$ where $f(x,y) = x^2
+    + y^2$ and $y(x) = 1/x$
+
+    \boxedanswer{
+      \begin{align*}
+        \left(\frac{\delta f}{\delta x}\right)_y &= x^2 + y^2 \\
+        y(x) = 1/x \\
+        \left(\frac{\delta f}{\delta x}\right)_y &= \frac{d}{dx} x^2
+        + \cancel{\frac{d}{dx} y^2} \\
+        \Aboxed{\left(\frac{\delta f}{\delta x}\right)_y &= 2x}
+      \end{align*}
+
+      This question somewhat confuses me. The notation
+      $\left(\frac{\delta f}{\delta x}\right)_y$ means "take the
+      partial derivative, holding $y$ constant." Presumably, this
+      means I should ignore the fact that $y(x) = x.$ Otherwise, I
+      would just substitute $y$ and the asnwers for part
+      \ref{partial} and \ref{total} would be identical.
+
+      \label{partial}
+
+    }
+
+  \item $\frac{df}{dx}$ where $f(x,y) = x^2 + y^2$ and $y(x) = 1/x$
+
+    \boxedanswer{
+      \begin{align*}
+        \frac{df}{dx} &= \frac{d}{dx}\left[x^2 + \frac{1}{x^2}\right] \\
+        \Aboxed{\frac{df}{dx} &= 2x - \frac{2}{x^3}}
+      \end{align*}
+    }
+
+    \label{total}
+\end{enumerate}
+
+\section*{Problem 6}
+
+Find the critical points $(x, y)$ of the function $f (x, y) =
+\ln(xy)$ subject to the constraint $2x^2 + y^2 = 1$.
+Hint: use Lagrange multipliers.
+
+\boxedanswer{
   \begin{align*}
-    \Aboxed{p_1 &= \input{./assets/q_2_8_2_a.tex}} \\
-    \Aboxed{p_2 &=  \input{./assets/q_2_8_2_b.tex}}
+    f(x,y) &= \ln(xy) \\
+    g(x,y) &= 2x^2 + y^2 - 1 = 0 \\
+    \mathcal{L}(x,y\lambda) &= f(x,y) + \lambda \cdot  g(x,y) \\
+    \mathcal{L}(x,y\lambda) &= \ln(xy) + \lambda (2x^2 + y^2 - 1) \\
+    \nabla\mathcal{L}(x,y\lambda) &= \left(\frac{1}{x} + \lambda 4x,
+    \frac{1}{y} + \lambda2y, 2x^2 + y^2 - 1\right) \\
+    &
+    \begin{cases}
+      \frac{1}{x} + \lambda 4x &= 0 \\
+      \frac{1}{y} + \lambda 2x &= 0 \\
+      2x^2 + y^2 - 1 &= 0 \\
+    \end{cases} \\
+    \frac{1}{x} + \lambda 4x &= 0 \\
+    \frac{1}{y} + \lambda 2y &= 0 \\
   \end{align*}
-
-  \input{./assets/q_2_8_2_conclusion.tex}
-
-  It is not significant that the "probabilities" are greater than one,
-  as we did not
-  normalize the wave function.
 }
 
-\section*{Supplemental Code}
+\boxedanswer{
+  \begin{align*}
+    x &= -\frac{1}{4\lambda} \\
+    y &= -\frac{1}{2\lambda} \\
+    0 &= 2\left(-\frac{1}{4\lambda} \right)^2 +
+    \left(-\frac{1}{2\lambda} \right)^2 - 1 \\
+    1 &= \frac{1}{8\lambda^2} + \frac{1}{4\lambda^2} \\
+    \lambda &= \pm\sqrt\frac{3}{8} \\
+    \frac{1}{x} \pm \sqrt\frac{3}{8} 4x &= 0 \\
+    \mp\sqrt\frac{3}{8} x^2 &= 1 \\
+    x &= \sqrt{\mp\frac{1}{4}\sqrt{\frac{8}{3}}} \\
+    \Aboxed{x &= \frac{1}{2}\sqrt{\mp\sqrt{\frac{8}{3}}}} \\
+    \frac{1}{y} \pm \sqrt\frac{3}{8} 2y &= 0 \\
+    \Aboxed{y &= \sqrt{\mp \frac{1}{2}\sqrt\frac{8}{3}}}
+  \end{align*}
 
-Any computational aid was provided using a programming language
-called \href{https://julialang.org}{Julia.} Source code is provided below.
+}
 
-\inputminted{julia}{./calculations/src/calculations.jl}
+\section*{Problem 7}
+
+Calculate the following integrals:
+
+\begin{enumerate}[a.]
+  \item $\int_0^\infty dxe^{-\lambda x}$
+
+    \boxedanswer{
+      \begin{align*}
+        \int_0^\infty dx e^{-\lambda x} &= -\frac{1}{\lambda}
+        \left[e^{-\lambda x}\right]_0^\infty \\
+        \Aboxed{\int_0^\infty dx e^{-\lambda x} &= \frac{1}{\lambda}}
+      \end{align*}
+    }
+
+  \item $\int_a^b dt \frac{1}{t} $
+
+    \boxedanswer{
+      \begin{align*}
+        \int_a^b dt \frac{1}{t} &= \ln[t]_a^b \\
+        \Aboxed{\int_a^b dt \frac{1}{t} &= \ln\left[\frac{b}{a}\right]}
+      \end{align*}
+    }
+
+  \item $\int_{-\infty}^\infty d\zeta e^{-\frac{\zeta^2}{2\sigma^2}}$
+
+    \boxedanswer{
+
+      This is the error function in another form. It has no
+      analytical solution. But at $-\infty$ it is $-1$, and it is $1$
+      at $\infty$. We can use this to evalute the definite integral.
+
+      \begin{align*}
+        \int_{-\infty}^{\infty} d\zeta e^{-\frac{\zeta^2}{2\sigma^2}}
+        &=
+        \left[\frac{\sqrt{2\sigma^2}\sqrt\pi}{2}\operatorname{erf}\left(\frac{x}{\sqrt{2\sigma^2}}\right)\right]_{-\infty}^\infty
+        \\
+        \int_{-\infty}^{\infty} d\zeta e^{-\frac{\zeta^2}{2\sigma^2}}
+        &= \left[\frac{\sqrt{2\sigma^2}\sqrt\pi}{2} +
+        \frac{\sqrt{2\sigma^2}\sqrt\pi}{2}\right] \\
+        \Aboxed{\int_{-\infty}^{\infty} d\zeta e^{-\frac{\zeta^2}{2\sigma^2}}
+        &= \sqrt{2\sigma^2\pi}}
+      \end{align*}
+    }
+
+\end{enumerate}
+
+\section*{Problem 8}
+
+Consider the function $F(x, y) = \cos(x)\sin(y)$
+
+\begin{enumerate}[a.]
+  \item Find a power series expansion of $F (x, y)$ to quadratic order
+    in $\delta x = x − x_0$ and $\delta y = y − y_0$
+    about $(x_0, y_0) = (\pi, \pi/2)$. Does this point describe a
+    maximum, minimum, or saddle?
+
+    \boxedanswer{
+      \begin{align*}
+        F(x,y) &\approx F_0 + F_x\delta x + F_y\delta y +
+        \frac{1}{2}(F_{xx}\delta x^2 + 2F_{xy}\delta x\delta y +
+        F_{yy}\delta y^2) \\
+        F(x,y) &\approx  \cos(\pi)\sin(\pi/2) -
+        \sin(\pi)\sin(\pi/2)(x - \pi) + \cos(\pi)\cos(\pi/2)(y - \pi/2) + \\
+        & \frac{1}{2}\left(-\cos(\pi)\sin(\pi/2)(x - \pi)^2 -
+          2\sin(\pi)\cos(\pi/2)(x - \pi)(y - \pi/2) -
+        \cos(\pi)\sin(\pi/2)(y - \pi/2)^2\right) \\
+        \Aboxed{F(x,y) &\approx  1 - \frac{(y - \pi/2)^2}{2}}
+      \end{align*}
+      This is a minimum, as $\cos(\pi) = -1$ is a mimimum and
+      $\sin(\pi/2) = 1$ is a maximum, This makes the function's
+      smallest possible value $-1$.
+    }
+
+  \item Same question as above, except at $(x_0, y_0) = (0, \pi/2)$.
+    \boxedanswer{
+
+      \begin{align*}
+        F(x,y) &\approx  \cos(0)\sin(\pi/2) -
+        \sin(0)\sin(\pi/2)(x) + \cos(0)\cos(\pi/2)(y - \pi/2) + \\
+        & \frac{1}{2}\left(-\cos(0)\sin(\pi/2)(x)^2 -
+          2\sin(0)\cos(\pi/2)(x)(y - \pi/2) +
+        \cos(0)\sin(\pi/2)(y - \pi/2)^2\right) \\
+        \Aboxed{F(x,y) &\approx 1 + \frac{(y - \pi/2)^2}{2}}
+      \end{align*}
+
+      This is a maximum, as both $\cos(x) = \sin(y) = 1$.
+    }
+
+    \pagebreak
+
+  \item Similarly, at $(x_0, y_0) = (\pi/2, \pi)$
+    \boxedanswer{
+      \begin{align*}
+        F(x,y) &\approx F_0 + F_x\delta x + F_y\delta y +
+        \frac{1}{2}(F_{xx}\delta x^2 + 2F_{xy}\delta x\delta y +
+        F_{yy}\delta y^2) \\
+        F(x,y) &\approx  \cos(\pi/2)\sin(\pi) -
+        \sin(\pi/2)\sin(\pi)(x - \pi/2) + \cos(\pi/2)\cos(\pi)(y - \pi) + \\
+        & \frac{1}{2}\left(-\cos(\pi/2)\sin(\pi)(x - \pi/2)^2 -
+          2\sin(\pi/2)\cos(\pi)(x - \pi/2)(y - \pi) -
+        \cos(\pi/2)\sin(\pi)(y - \pi)^2\right) \\
+        \Aboxed{F(x,y) &\approx  1 - (x - \pi/2)(y - \pi)}
+      \end{align*}
+      This is a saddle point, as both $\cos(\pi/2) = \sin(\pi) = 0$.
+    }
+\end{enumerate}
 
 \end{document}
