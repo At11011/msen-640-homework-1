@@ -9,3 +9,4 @@ main.xdv
 _minted-main/
 svg-inkscape/
 pdflatex*
+assets/*.pdf

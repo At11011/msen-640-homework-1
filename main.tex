@@ -9,304 +9,107 @@
 
 \pagebreak
 
-\section*{Problem 1}
+\begin{enumerate}
+  \item {[10 pts]} Determine if each of the following
+    differentials is exact:
 
-What name (optionally, pronouns) would you prefer to be called by in this class?
+    \begin{enumerate}[(a)]
+      \item $dz = ydx - xdy$
+      \item $dz = -\frac{xy}{w^2}dw + \frac{y}{w} dx + \frac{x}{w}dy$
+    \end{enumerate}
+  \item {[15 pts]} Consider the following equation:
+    \begin{equation*}
+      x(t, u, v) = \frac{t^3 u^2}{1 - v}
+    \end{equation*}
+    \begin{enumerate}[(a)]
+      \item If $m$ is conjugate to $t$, $n$ is conjugate to $u, p$ is
+        conjugate to $v$, determine the coefficient relations.
+      \item Calculate $\psi(m, u, p) = z - mt - pv$: the Legendre
+        transform of $z$, exchanging $t$ and $v$ for $m$ and $p$.
+        Make sure that $t$ and $v$ do not appear in $\psi(m, u, p)$.
+    \end{enumerate}
+  \item {[25 pts]} A gas was determine to have an internal energy of
+    the form $U = U_0 + 5PV$, where $U_0$ is a constant. Given the
+    three states
+    \begin{itemize}[\textbullet]
+      \item state A: $P = \SI{0.2}{\mega\pascal},  V =
+        \SI{0.01}{\meter\cubed}$
+      \item state B: $P = \SI{0.2}{\mega\pascal}, V = \SI{0.03}{\meter\cubed}$
+      \item state C: $P = \SI{0.5}{\mega\pascal}, V = \SI{0.01}{\meter\cubed}$
+    \end{itemize}
+    \begin{enumerate}[(a)]
+      \item Calculate $Q$ and $W$ for the process taking state A to
+        state B along a straight path
+      \item Calcualte $Q$ and $W$ for the process taking state B to
+        state C along a straight path
+      \item Calculate $Q$ and $W$ for the process taking state C to
+        state A along a straight path
+      \item Calculate $Q$ and $W$ for the process taking state A to
+        state B along the parabolic path $P = P_0 +
+        \kappa\left(\frac{V}{V_0} - 1\right)^2$ where
+        $P_0 = \SI{0.01}{\mega\pascal}, V_0 = \SI{0.02}{\meter}$, and
+        $\kappa = \SI{0.04}{\mega\pascal}$
+    \end{enumerate}
+  \item  {[35 pts]} Consider an isolated system (no heat, matter, or
+    work may cross the system boundary)
+    consisting of three internal compartments A, B, and C.
+    Compartment A is 1 liter, B is 2 liters, and
+    C is 4 liters. The compartments are separated by partitions; each
+    partition has a valve (V1 and V2)
+    which may be opened remotely. Initially the central volume (B) is
+    filled with an ideal gas at 298K and
+    \SI{354.6}{\kilo\pascal} and the other two (A and C) are
+    completely evacuated (i.e., \SI{0}{\pascal}).
 
-\boxedanswer{Nathaniel Thomas. I go by Nathaniel.}
+    \begin{figure}[h]
+      \centering
+      \includegraphics[width=0.6\textwidth]{./assets/q_4_fig.png}
+    \end{figure}
 
-\section*{Problem 2}
+    \begin{enumerate}[(a)]
+      \item Consider the following processes:
 
-What sort of materials systems are you most interested in?
+        \textit{First process: The valve to the A side is opened, the gas
+          expands freely into compartment A, and
+          the system comes to equilibrium. Then the valve to the C side
+          is opened, and the system comes
+        to equilibrium again.}
 
-\boxedanswer{I am interested in solid mechanics. Specifically, nuclear materials
-in extreme environments (corrosive, high radiation environments).}
+        \hspace{0.5 cm}
 
-\section*{Problem 3}
+        \textit{Second process: Both valves are opened simultaneously, the
+          gas expands freely into both compart-
+        ments, and the A/B/C system comes to equilibrium.}
 
-What is your undergraduate degree in?
+        \hspace{0.5 cm}
 
-\boxedanswer{
-  Chemical Engineering
-}
+        Which of the processes above produces more entropy? You must
+        explain your answer completely.
 
-\pagebreak
+      \item  The internal energy of an ideal gas is determined solely
+        by its temperature. If that’s the case,
+        what is the final temperature of the system in the first process?
 
-\section*{Problem 4}
+      \item It is found that the change in entropy of the first
+        process is \SI{5.5}{\joule\per\kelvin}. What can you say about
+        the reversibility of the process?
+    \end{enumerate}
 
-Do you have any programming experience? If so, which language(s)?
+  \item {[15 pts]}
+    \begin{enumerate}[(a)]
+      \item If $\psi(m) = z − mx$ is the Legendre
+        transform of $z(x)$ (where $m$ is conjugate to $x$), prove
+        that
+        \[\frac{d^2\psi}{dm^2} = -\left[\frac{d^2z}{dx^2} \right]^{-1}\]
 
-\boxedanswer{
-  Yes. I am most proficient in:
+        Hint: the chain rule will come in handy,
+        as will the identity
+        $dx/dz = 1/(dz/dx)$.
 
-  \begin{enumerate}
-    \item C++
-    \item C
-    \item Rust
-    \item Julia
-    \item Python
-    \item MATLAB
-    \item LaTeX
-  \end{enumerate}
+      \item Describe what this implies for the graph of $\psi$
+        relative to the graph of $z$.
+    \end{enumerate}
 
-  With some experience in:
-
-  \begin{enumerate}
-    \item Javascript
-    \item FORTRAN
-    \item Dart
-    \item Java
-    \item C\#
-    \item x86 assembly
-    \item WGSL
-    \item Visual Basic
-    \item QuickBASIC
-  \end{enumerate}
-
-}
-
-\pagebreak
-\section*{Problem 5}
-
-Evaluate the following derivatives:
-\begin{enumerate}[a.]
-  \item $\frac{d\Pi}{d\rho}$ where $\Pi(\rho) = \sum_{n=0}^\infty  A_n
-    \rho^n; \{ A_n \}$ are real constants (these are related to
-    "virial coefficients")
-
-    \boxedanswer{
-      Apply the power rule to the formula for $\Pi(\rho)$:
-
-      \begin{align*}
-        \frac{d\Pi}{d\rho} &= \sum_{n=1}^\infty A_n\cdot n \rho^{n-1}
-      \end{align*}
-
-      Note that the $n=0$ term disappears because it is constant.
-    }
-
-  \item $\frac{df}{d\phi}$ where $f(\phi) = \phi \ln\phi + (1 - \phi)
-    \ln (1 - \phi) + \chi \phi(1 - \phi)$
-
-    \boxedanswer{
-      \begin{align*}
-        f(\phi) &= \overbrace{\phi \ln\phi}^{A} +
-        \overbrace{(1 - \phi)
-        \ln (1 - \phi)}^{B} + \overbrace{\chi \phi(1 - \phi)}^{C} \\
-        \frac{df}{d\phi} &= \overbrace{(1)(\ln\phi) +
-        (\phi)\left(\frac{1}{\phi}\right)}^{dA/d\phi} \\
-        &  \overbrace{(-1)\ln(1 - \phi) + (1 - \phi)\left(\frac{-1}{1 -
-        \phi}\right)}^{dB/d\phi} \\
-        & \overbrace{\chi\left[(1)(1 - \phi) + (\phi)(-1)\right]}^{dC/d\phi} \\
-        \Aboxed{\frac{df}{d\phi} &= \ln\left(\frac{\phi}{1 - \phi}\right) +
-        \chi(1 - 2\phi)}
-      \end{align*}
-    }
-  \item $\frac{d^2 f}{d\phi^2}$ where $f(\phi) = \phi\ln\phi + (1 -
-    \phi)\ln(1 - \phi) + \chi\phi(1 - \phi)$
-
-    \boxedanswer{
-      \label{first_deriv}
-
-      Differentiate the answer from part \ref{first_deriv}
-
-      \begin{align*}
-        \frac{d^2 f}{d\phi^2} &= \frac{d}{d\phi}\left[
-          \ln\left(\frac{\phi}{1 - \phi}\right) +
-        \chi(1 - 2\phi)\right] \\
-        \frac{d^2 f}{d\phi^2} &= \frac{1 - \phi}{\phi}
-        \frac{d}{dx}\left[\frac{x}{1 - x}\right] \\
-        \frac{d^2 f}{d\phi^2} &= \frac{1 - \phi}{\phi}
-        \left[\frac{(1)(1 - \phi) - (\phi)(-1)}{(1 - \phi)^2}\right] \\
-        \frac{d^2 f}{d\phi^2} &= \frac{1 - \phi}{\phi}
-        \left[\frac{1}{(1 - \phi)^2}\right] \\
-        \Aboxed{\frac{d^2 f}{d\phi^2} &= \frac{1 - \phi}{\phi(1 - \phi)^2} }
-      \end{align*}
-    }
-
-  \item $\left(\frac{\delta f}{\delta x}\right)_y$ where $f(x,y) = x^2
-    + y^2$ and $y(x) = 1/x$
-
-    \boxedanswer{
-      \begin{align*}
-        \left(\frac{\delta f}{\delta x}\right)_y &= x^2 + y^2 \\
-        y(x) = 1/x \\
-        \left(\frac{\delta f}{\delta x}\right)_y &= \frac{d}{dx} x^2
-        + \cancel{\frac{d}{dx} y^2} \\
-        \Aboxed{\left(\frac{\delta f}{\delta x}\right)_y &= 2x}
-      \end{align*}
-
-      This question somewhat confuses me. The notation
-      $\left(\frac{\delta f}{\delta x}\right)_y$ means "take the
-      partial derivative, holding $y$ constant." Presumably, this
-      means I should ignore the fact that $y(x) = x.$ Otherwise, I
-      would just substitute $y$ and the asnwers for part
-      \ref{partial} and \ref{total} would be identical.
-
-      \label{partial}
-
-    }
-
-  \item $\frac{df}{dx}$ where $f(x,y) = x^2 + y^2$ and $y(x) = 1/x$
-
-    \boxedanswer{
-      \begin{align*}
-        \frac{df}{dx} &= \frac{d}{dx}\left[x^2 + \frac{1}{x^2}\right] \\
-        \Aboxed{\frac{df}{dx} &= 2x - \frac{2}{x^3}}
-      \end{align*}
-    }
-
-    \label{total}
-\end{enumerate}
-
-\section*{Problem 6}
-
-Find the critical points $(x, y)$ of the function $f (x, y) =
-\ln(xy)$ subject to the constraint $2x^2 + y^2 = 1$.
-Hint: use Lagrange multipliers.
-
-\boxedanswer{
-  \begin{align*}
-    f(x,y) &= \ln(xy) \\
-    g(x,y) &= 2x^2 + y^2 - 1 = 0 \\
-    \mathcal{L}(x,y\lambda) &= f(x,y) + \lambda \cdot  g(x,y) \\
-    \mathcal{L}(x,y\lambda) &= \ln(xy) + \lambda (2x^2 + y^2 - 1) \\
-    \nabla\mathcal{L}(x,y\lambda) &= \left(\frac{1}{x} + \lambda 4x,
-    \frac{1}{y} + \lambda2y, 2x^2 + y^2 - 1\right) \\
-    &
-    \begin{cases}
-      \frac{1}{x} + \lambda 4x &= 0 \\
-      \frac{1}{y} + \lambda 2x &= 0 \\
-      2x^2 + y^2 - 1 &= 0 \\
-    \end{cases} \\
-    \frac{1}{x} + \lambda 4x &= 0 \\
-    \frac{1}{y} + \lambda 2y &= 0 \\
-  \end{align*}
-}
-
-\boxedanswer{
-  \begin{align*}
-    x &= -\frac{1}{4\lambda} \\
-    y &= -\frac{1}{2\lambda} \\
-    0 &= 2\left(-\frac{1}{4\lambda} \right)^2 +
-    \left(-\frac{1}{2\lambda} \right)^2 - 1 \\
-    1 &= \frac{1}{8\lambda^2} + \frac{1}{4\lambda^2} \\
-    \lambda &= \pm\sqrt\frac{3}{8} \\
-    \frac{1}{x} \pm \sqrt\frac{3}{8} 4x &= 0 \\
-    \mp\sqrt\frac{3}{8} x^2 &= 1 \\
-    x &= \sqrt{\mp\frac{1}{4}\sqrt{\frac{8}{3}}} \\
-    \Aboxed{x &= \frac{1}{2}\sqrt{\mp\sqrt{\frac{8}{3}}}} \\
-    \frac{1}{y} \pm \sqrt\frac{3}{8} 2y &= 0 \\
-    \Aboxed{y &= \sqrt{\mp \frac{1}{2}\sqrt\frac{8}{3}}}
-  \end{align*}
-
-}
-
-\section*{Problem 7}
-
-Calculate the following integrals:
-
-\begin{enumerate}[a.]
-  \item $\int_0^\infty dxe^{-\lambda x}$
-
-    \boxedanswer{
-      \begin{align*}
-        \int_0^\infty dx e^{-\lambda x} &= -\frac{1}{\lambda}
-        \left[e^{-\lambda x}\right]_0^\infty \\
-        \Aboxed{\int_0^\infty dx e^{-\lambda x} &= \frac{1}{\lambda}}
-      \end{align*}
-    }
-
-  \item $\int_a^b dt \frac{1}{t} $
-
-    \boxedanswer{
-      \begin{align*}
-        \int_a^b dt \frac{1}{t} &= \ln[t]_a^b \\
-        \Aboxed{\int_a^b dt \frac{1}{t} &= \ln\left[\frac{b}{a}\right]}
-      \end{align*}
-    }
-
-  \item $\int_{-\infty}^\infty d\zeta e^{-\frac{\zeta^2}{2\sigma^2}}$
-
-    \boxedanswer{
-
-      This is the error function in another form. It has no
-      analytical solution. But at $-\infty$ it is $-1$, and it is $1$
-      at $\infty$. We can use this to evalute the definite integral.
-
-      \begin{align*}
-        \int_{-\infty}^{\infty} d\zeta e^{-\frac{\zeta^2}{2\sigma^2}}
-        &=
-        \left[\frac{\sqrt{2\sigma^2}\sqrt\pi}{2}\operatorname{erf}\left(\frac{x}{\sqrt{2\sigma^2}}\right)\right]_{-\infty}^\infty
-        \\
-        \int_{-\infty}^{\infty} d\zeta e^{-\frac{\zeta^2}{2\sigma^2}}
-        &= \left[\frac{\sqrt{2\sigma^2}\sqrt\pi}{2} +
-        \frac{\sqrt{2\sigma^2}\sqrt\pi}{2}\right] \\
-        \Aboxed{\int_{-\infty}^{\infty} d\zeta e^{-\frac{\zeta^2}{2\sigma^2}}
-        &= \sqrt{2\sigma^2\pi}}
-      \end{align*}
-    }
-
-\end{enumerate}
-
-\section*{Problem 8}
-
-Consider the function $F(x, y) = \cos(x)\sin(y)$
-
-\begin{enumerate}[a.]
-  \item Find a power series expansion of $F (x, y)$ to quadratic order
-    in $\delta x = x − x_0$ and $\delta y = y − y_0$
-    about $(x_0, y_0) = (\pi, \pi/2)$. Does this point describe a
-    maximum, minimum, or saddle?
-
-    \boxedanswer{
-      \begin{align*}
-        F(x,y) &\approx F_0 + F_x\delta x + F_y\delta y +
-        \frac{1}{2}(F_{xx}\delta x^2 + 2F_{xy}\delta x\delta y +
-        F_{yy}\delta y^2) \\
-        F(x,y) &\approx  \cos(\pi)\sin(\pi/2) -
-        \sin(\pi)\sin(\pi/2)(x - \pi) + \cos(\pi)\cos(\pi/2)(y - \pi/2) + \\
-        & \frac{1}{2}\left(-\cos(\pi)\sin(\pi/2)(x - \pi)^2 -
-          2\sin(\pi)\cos(\pi/2)(x - \pi)(y - \pi/2) -
-        \cos(\pi)\sin(\pi/2)(y - \pi/2)^2\right) \\
-        \Aboxed{F(x,y) &\approx  1 - \frac{(y - \pi/2)^2}{2}}
-      \end{align*}
-      This is a minimum, as $\cos(\pi) = -1$ is a mimimum and
-      $\sin(\pi/2) = 1$ is a maximum, This makes the function's
-      smallest possible value $-1$.
-    }
-
-  \item Same question as above, except at $(x_0, y_0) = (0, \pi/2)$.
-    \boxedanswer{
-
-      \begin{align*}
-        F(x,y) &\approx  \cos(0)\sin(\pi/2) -
-        \sin(0)\sin(\pi/2)(x) + \cos(0)\cos(\pi/2)(y - \pi/2) + \\
-        & \frac{1}{2}\left(-\cos(0)\sin(\pi/2)(x)^2 -
-          2\sin(0)\cos(\pi/2)(x)(y - \pi/2) +
-        \cos(0)\sin(\pi/2)(y - \pi/2)^2\right) \\
-        \Aboxed{F(x,y) &\approx 1 + \frac{(y - \pi/2)^2}{2}}
-      \end{align*}
-
-      This is a maximum, as both $\cos(x) = \sin(y) = 1$.
-    }
-
-    \pagebreak
-
-  \item Similarly, at $(x_0, y_0) = (\pi/2, \pi)$
-    \boxedanswer{
-      \begin{align*}
-        F(x,y) &\approx F_0 + F_x\delta x + F_y\delta y +
-        \frac{1}{2}(F_{xx}\delta x^2 + 2F_{xy}\delta x\delta y +
-        F_{yy}\delta y^2) \\
-        F(x,y) &\approx  \cos(\pi/2)\sin(\pi) -
-        \sin(\pi/2)\sin(\pi)(x - \pi/2) + \cos(\pi/2)\cos(\pi)(y - \pi) + \\
-        & \frac{1}{2}\left(-\cos(\pi/2)\sin(\pi)(x - \pi/2)^2 -
-          2\sin(\pi/2)\cos(\pi)(x - \pi/2)(y - \pi) -
-        \cos(\pi/2)\sin(\pi)(y - \pi)^2\right) \\
-        \Aboxed{F(x,y) &\approx  1 - (x - \pi/2)(y - \pi)}
-      \end{align*}
-      This is a saddle point, as both $\cos(\pi/2) = \sin(\pi) = 0$.
-    }
 \end{enumerate}
 
 \end{document}
