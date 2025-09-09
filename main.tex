@@ -219,9 +219,58 @@
 
         \boxedanswer{
           \begin{align*}
-            \text{no clue lol}
+            W &= \int_{V_1}^{V_2} P(V) dV \\
+            &
+            \begin{aligned}
+              P - P_1 &= \frac{\Delta P}{\Delta V}(V - V_1) \\
+              P &= \frac{\Delta P}{\Delta V}V - \frac{\Delta P}{\Delta
+              V}V_1 + P_1 \\
+              P &= \frac{\Delta P}{\Delta V}V - \frac{\Delta P}{\Delta
+              V}V_1 + P_1 \\
+            \end{aligned} \\
+            W &= \int_{V_1}^{V_2}\frac{\Delta P}{\Delta V}V -
+            \frac{\Delta P}{\Delta
+            V}V_1 + P_1 dV \\
+            W &= \frac{\Delta P}{\Delta
+            V}\overbrace{\int_{V_1}^{V_2}VdV}^{\left[\frac{V^2}{2}\right]_{V_1}^{V_2}}
+            -
+            \frac{\Delta P\cdot V_1}{\Delta V}(V_2 - V_1) + P_1(V_2 - V_1) \\
+            W &= \frac{\Delta P}{2\Delta V}(V_2^2 - V_1^2)
+            - \frac{\Delta
+            P\cdot V_1}{\Delta V}(V_2 - V_1) + P_1(V_2 - V_1) \\
+            W &= \frac{\Delta P}{2\Delta V}(V_2^2 - V_1^2)
+            - \left(\frac{\Delta
+            P\cdot V_1}{\Delta V}+ P_1\right)(V_2 - V_1)  \\
+            &
+            \begin{aligned}
+              \Delta P &= P_2 - P_1 = \SI{0.3e6}{\pascal} \\
+              \Delta V &= V_2 - V_1 = \SI{0.02}{\meter\cubed} \\
+              V_1 &= \SI{0.03}{\meter\cubed} \\
+              V_2 &= \SI{0.01}{\meter\cubed} \\
+              P_1 &= \SI{0.2e6}{\pascal} \\
+              P_2 &= \SI{0.5e6}{\pascal} \\
+            \end{aligned} \\
+            W &=
+            \frac{(\SI{0.3e6}{\pascal})}{2(\SI{0.02}{\meter\cubed})}[(\SI{0.01}{\meter\cubed})^2
+            - (\SI{0.03}{\meter\cubed})^2] \\
+            &\hspace{1 cm}- \left(\frac{(\SI{0.3e6}{\pascal})\cdot
+              (\SI{0.03}{\meter\cubed})}{(\SI{0.02}{\meter\cubed})} +
+            (\SI{0.2e6}{\pascal})\right)[(\SI{0.01}{\meter\cubed})
+            - (\SI{0.03}{\meter\cubed})]  \\
+            \Aboxed{W &= \SI{1000}{\joule}} \\
+            Q &= \Delta U - W \\
+            \Delta U &= 5(P_2V_2 - P_1V_1) \\
+            \Delta U &=
+            5[(\SI{0.5e6}{\pascal})(\SI{0.01}{\meter\cubed}) -
+              (\SI{0.2e6}{\pascal})(\SI{0.03}{\meter\cubed})
+            ] \\
+            \Delta U &= \SI{-5000}{\joule} \\
+            Q &= \SI{-5000}{\joule} -  \SI{1000}{\joule} \\
+            \Aboxed{Q &= \SI{-6000}{\joule}}
           \end{align*}
         }
+
+        \pagebreak
 
       \item Calculate $Q$ and $W$ for the process taking state C to
         state A along a straight path
@@ -238,10 +287,10 @@
               \Delta U &= 5V(P_2 - P_1) \\
               \Delta U &=
               5(\SI{0.01}{\meter\cubed})(\SI{0.5}{\mega\pascal} -
-              \SI{0.1}{\mega\pascal}) \\
-              \Delta U &= \SI{20000}{\joule}
+              \SI{0.2}{\mega\pascal}) \\
+              \Delta U &= \SI{15000}{\joule}
             \end{aligned} \\
-            \Aboxed{Q &= \SI{20000}{\joule}} \\
+            \Aboxed{Q &= \SI{15000}{\joule}} \\
             \Aboxed{W &= \SI{0}{\joule}}
           \end{align*}
         }
@@ -249,9 +298,61 @@
       \item Calculate $Q$ and $W$ for the process taking state A to
         state B along the parabolic path $P = P_0 +
         \kappa\left(\frac{V}{V_0} - 1\right)^2$ where
-        $P_0 = \SI{0.01}{\mega\pascal}, V_0 = \SI{0.02}{\meter\cubed}$, and
-        $\kappa = \SI{0.04}{\mega\pascal}$.
+        $P_0 = \SI{0.1}{\mega\pascal}, V_0 = \SI{0.02}{\meter\cubed}$, and
+        $\kappa = \SI{0.4}{\mega\pascal}$.
+
+        \boxedanswersmall{
+          \begin{align*}
+            W &= \int_{V_1}^{V_2} P(V) dV \\
+            W &= \int_{V_1}^{V_2}  P_0 +
+            \kappa\left(\frac{V}{V_0} - 1\right)^2dV \\
+            &
+            \begin{aligned}
+              u &= \frac{V}{V_0} - 1 \\
+              du &= \frac{dV}{V_0} \\
+              dV &= V_0du \\
+            \end{aligned} \\
+            W &=   P_0(V_2 - V_1) +
+            \kappa V_0\int_{V_1}^{V_2} u^2du \\
+            W &=   P_0(V_2 - V_1) +
+            \kappa \frac{V_0}{3}\left[\left(\frac{V}{V_0} -
+            1\right)^3\right]_{V_1}^{V_2} \\
+            &
+            \begin{aligned}
+              P_0 &= P_1 = P_2 = \SI{0.1}{\mega\pascal} \\
+              V_0 &= \SI{0.02}{\meter\cubed} \\
+              V_1 &= \SI{0.01}{\meter\cubed} \\
+              V_2 &= \SI{0.03}{\meter\cubed} \\
+              \kappa &= \SI{0.4}{\mega\pascal} \\
+            \end{aligned} \\
+            W &=
+            (\SI{0.1}{\mega\pascal})(\SI{0.03}{\meter\cubed}-
+            \SI{0.01}{\meter\cubed}) + \\
+            &\hspace{1
+            cm}(\SI{0.4}{\mega\pascal})\frac{(\SI{0.02}{\meter\cubed})}{3}\left[\left(\frac{\SI{0.03}{\meter\cubed}}{(\SI{0.02}{\meter\cubed})}
+                -
+              1\right)^3 -
+              \left(\frac{\SI{0.01}{\meter\cubed}}{(\SI{0.02}{\meter\cubed})}
+                -
+            1\right)^3\right] \\
+            \Aboxed{W &= \SI{2666.6}{\joule}} \\
+            Q &= \Delta U - W \\
+            &
+            \begin{aligned}
+              \Delta U &= 5P_1(V_2 - V_1) \\
+              \Delta U &=
+              5(\SI{0.1e6}{\mega\pascal})[(\SI{0.03}{\meter\cubed}) -
+              (\SI{0.01}{\meter\cubed})] \\
+              \Delta U &= \SI{10000}{\joule} \\
+              \Aboxed{Q &= \SI{7333.3}{\joule}}
+            \end{aligned} \\
+          \end{align*}
+        }
+
     \end{enumerate}
+
+    \pagebreak
+
   \item  {[35 pts]} Consider an isolated system (no heat, matter, or
     work may cross the system boundary)
     consisting of three internal compartments A, B, and C.
@@ -288,14 +389,132 @@
         Which of the processes above produces more entropy? You must
         explain your answer completely.
 
+        \boxedanswer{
+          In this system,
+          because the system is isolated, the internal energy does not change.
+          $\Delta U = Q + W = 0$. Hence, $Q = W$. The internal energy
+          of an idea gas can be found:
+
+          \begin{align*}
+            \Delta U &= C_V(T_2 - T_1) = \frac{3}{2}R(T_2 - T_1) \tag{4.62} \\
+          \end{align*}
+
+          Thus the internal energy is only dependent on temperature
+          for an ideal gas. Since the internal energy does not
+          change, and an expansion is taking place, the final
+          temperature is equal to the initial temperature in both processes.
+
+          Thus, we can produce a general expression for the entropy
+          change given this information.
+
+          \begin{align*}
+            dS &= \frac{C_V}{T}\overbrace{dT}^0 + \frac{\alpha}{\beta}dV \\
+            dS &=  \frac{\alpha}{\beta}dV \\
+            &
+            \begin{aligned}
+              \alpha &= \frac{1}{T} \\
+              \beta &= \frac{1}{P} \\
+            \end{aligned}\tag{4.57-4.58} \\
+            dS &=  \frac{P}{T}dV \\
+            & \frac{P}{T} = \frac{R}{V} \\
+            dS &= \frac{R}{V}dV  \\
+            \int_{S_1}^{S_2} dS &= R\int_{V_1}^{V_2} \frac{1}{V}dV  \\
+            \Delta S &= R\ln\left(\frac{V_2}{V_1}\right)
+            \tag{1}\label{eq:entropy} \\
+          \end{align*}
+
+        }
+
+        \pagebreak
+
+        \boxedanswersmall{
+          Based on the above relation, we can compare the two processes:
+          \begin{align*}
+            \Delta S_1 &=   R\ln\left(\frac{V_2}{V_1}\right) +
+            R\ln\left(\frac{V_3}{V_2}\right) \\
+            \Delta S_1 &=
+            R\ln\left(\frac{\cancel{V_2}V_3}{V_1\cancel{V_2}}\right) \\
+            \Delta S_2 &=
+            R\ln\left(\frac{V_3}{V_1}\right) \\
+            % &
+            % \begin{aligned}
+            %   R &= \SI{8.314}{\joule\per\mole\kelvin} \\
+            % V_1 &= \SI{1}{\liter} = \SI{1e-3}{m^3} \\
+            % V_2 &= \SI{1}{\liter} + \SI{2}{\liter} = \SI{3e-3}{m^3} \\
+            % V_3 &= \SI{1}{\liter} + \SI{2}{\liter} + \SI{4}{\liter}
+            % = \SI{7e-3}{m^3} \\
+            % \end{aligned} \\
+            % \Delta S_1 &=
+            % (\SI{8.314}{\joule\per\mole\kelvin})\ln\left(\frac{(\SI{3e-3}{\meter\cubed})(\SI{7e-3}{\meter\cubed})}{(\SI{1e-3}{\meter\cubed})(\SI{3e-3}{\meter\cubed})}\right)
+            % \\
+            % \Delta S_1 &= \SI{16.18}{\joule\per\kelvin\mole} \\
+            % \Delta S_2 &=   R\ln\left(\frac{V_3}{V_1}\right) \\
+            % \Delta S_2 &=
+            % (\SI{8.314}{\joule\per\mole\kelvin})\ln\left(\frac{(\SI{7e-3}{\meter\cubed})}{(\SI{1e-3}{\meter\cubed})}\right)
+            % \\
+          \end{align*}
+
+          \textbf{Based on the above, the total entropy change relies
+            solely on the initial and final state of the system. Hence,
+            both processes produces the same amount of entropy. This
+            makes sense, as entropy is a state function, and the change
+            in entropy relies only on the initial and final state of
+            the system. Because the system is isolated, no entropy
+            enters or leaves the system, so the amount generated in
+          both processes must be the same.}
+
+        }
+
       \item  The internal energy of an ideal gas is determined solely
         by its temperature. If that’s the case,
         what is the final temperature of the system in the first process?
 
+        \boxedanswer{
+          As explained above, the internal energy does not change,
+          and the temperature remains the same in the first process.
+        }
+
       \item It is found that the change in entropy of the first
         process is \SI{5.5}{\joule\per\kelvin}. What can you say about
         the reversibility of the process?
+
+        \boxedanswer{
+          \cref{eq:entropy} can be used to calculate the change in entropy.
+
+          \begin{align*}
+            \Delta S &= R\ln\left(\frac{V_3}{V_1}\right) \\
+            &
+            \begin{aligned}
+              R &= \SI{8.314}{\joule\per\mole\kelvin} \\
+              V_1 &= \SI{1}{\liter} = \SI{1e-3}{m^3} \\
+              V_3 &= \SI{1}{\liter} + \SI{2}{\liter} + \SI{4}{\liter}
+              = \SI{7e-3}{m^3} \\
+            \end{aligned} \\
+            \Delta S &=
+            (\SI{8.314}{\joule\per\mole\kelvin})\ln\left(\frac{(\SI{7e-3}{m^3})}{(\SI{1e-3}{m^3})}\right)
+            \\
+            \Delta S &= \SI{16.18}{\joule\per\mole\kelvin}
+          \end{align*}
+
+          \textbf{\SI{5.5}{\joule\per\kelvin} is less than
+            \SI{16.18}{\joule\per\mole\kelvin}, which means that the
+            original constraints of the system must have been violated.
+            Either the gas is not ideal, or some work/heat crossed the
+            system boundary. Alternatively, the final volume may just
+            be smaller than originally specified. Whether the process
+            is reversible or not depends on the nature of the work
+            extracted from the
+            system. If no work was extracted, then the process is still
+            irreversible. If some was, then it is at least partially
+            reversible, possible fully reversible depending on the
+            nature of the expansion. However, sudden expansions (like
+          the one considered here) are almost entirely irreversible.}
+
+        }
+
     \end{enumerate}
+
+    \pagebreak
 
   \item {[15 pts]}
     \begin{enumerate}[(a)]
@@ -308,8 +527,32 @@
         as will the identity
         $dx/dz = 1/(dz/dx)$.
 
+        \boxedanswer{
+          \begin{align*}
+            \psi(m) &= z(x) - mx \\
+            m &= \frac{dz}{dx}  \\
+            \frac{d\psi}{dm} &= \frac{dz}{dx}\frac{dx}{dm} -
+            \left(m\frac{dx}{dm} + x\right) \\
+            \frac{d\psi}{dm} &= (\overbrace{z'(x) - m}^{0})\frac{dx}{dm} - x \\
+            \frac{d\psi}{dm} &= -x \\
+            \frac{d^2\psi}{dm^2} &= -\frac{dx}{dm} \\
+            &
+            \begin{aligned}
+              \frac{dx}{dm} &= \frac{1}{dm/dx} = \frac{1}{z''(x)} \\
+            \end{aligned} \\
+            \Aboxed{\frac{d^2\psi}{dm^2} &= -\left[ \frac{d^2
+            z}{dx^2} \right]^{-1}}
+          \end{align*}
+        }
+
       \item Describe what this implies for the graph of $\psi$
         relative to the graph of $z$.
+
+        \boxedanswer{
+          \textbf{The concavity of the curve of the Legendre
+          transformation is opposite.}
+        }
+
     \end{enumerate}
 
 \end{enumerate}
