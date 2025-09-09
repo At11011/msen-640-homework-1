@@ -156,7 +156,7 @@
 
     \pagebreak
 
-  \item {[25 pts]} A gas was determine to have an internal energy of
+  \item {[25 pts]} A gas was determined to have an internal energy of
     the form $U = U_0 + 5PV$, where $U_0$ is a constant. Given the
     three states
     \begin{itemize}[\textbullet]
@@ -165,18 +165,92 @@
       \item state B: $P = \SI{0.2}{\mega\pascal}, V = \SI{0.03}{\meter\cubed}$
       \item state C: $P = \SI{0.5}{\mega\pascal}, V = \SI{0.01}{\meter\cubed}$
     \end{itemize}
+
+    \boxedanswersmall{
+      \centering
+      \input{./assets/q_3_fig.tex}
+      \vspace{0.5em}
+      \captionof{figure}{PV diagram of three states with arrows
+      indicating state changes.}
+    }
+
     \begin{enumerate}[(a)]
       \item Calculate $Q$ and $W$ for the process taking state A to
         state B along a straight path
+
+        \boxedanswersmall{
+          \begin{align*}
+            dU &= \overbrace{TdS}^{Q} - \overbrace{PdV}^{W} + \delta W' \\
+            & \delta W' = 0 \\
+            W &= PdV \\
+            &
+            \begin{aligned}
+              P &= \SI{0.2}{\mega\pascal} \\
+              dV &= \SI{0.03}{\meter\cubed} - \SI{0.01}{\meter\cubed} \\
+              dV &= \SI{0.02}{\meter\cubed}
+            \end{aligned} \\
+            W &= (\SI{0.2e6}{\pascal})(\SI{0.02}{\meter\cubed}) \\
+            \Aboxed{W &= \SI{4000}{\joule}} \\
+            \Delta U &= Q + W \\
+            Q &=\delta U - W \\
+            &
+            \begin{aligned}
+              \Delta U &= U_2 - U_1 \\
+              U &= U_0 + 5 PV \\
+              &
+              \begin{aligned}
+                U_2 &= U_0 + 5
+                (\SI{0.2}{\mega\pascal})(\SI{0.03}{\meter\cubed}) \\
+                U_1 &= U_0 + 5
+                (\SI{0.2}{\mega\pascal})(\SI{0.01}{\meter\cubed}) \\
+              \end{aligned} \\
+              \Delta U &=
+              5(\SI{0.2e6}{\pascal})(\SI{0.03}{\meter\cubed} -
+              \SI{0.01}{\meter\cubed}) \\
+              \Delta U &=\SI{20000}{\joule} \\
+            \end{aligned} \\
+            Q &= (\SI{20000}{\joule}) - (\SI{4000}{\joule}) \\
+            \Aboxed{Q &= \SI{16000}{\joule}}
+          \end{align*}
+        }
+
       \item Calcualte $Q$ and $W$ for the process taking state B to
         state C along a straight path
+
+        \boxedanswer{
+          \begin{align*}
+            \text{no clue lol}
+          \end{align*}
+        }
+
       \item Calculate $Q$ and $W$ for the process taking state C to
         state A along a straight path
+
+        \boxedanswer{
+          Because there is no change in volume, no work is being done.
+
+          \begin{align*}
+            W &= P\overbrace{dV}^{0} \\
+            \Delta U &= Q + \cancel{W} \\
+            Q &= \Delta U  = U_2 - U_1\\
+            &
+            \begin{aligned}
+              \Delta U &= 5V(P_2 - P_1) \\
+              \Delta U &=
+              5(\SI{0.01}{\meter\cubed})(\SI{0.5}{\mega\pascal} -
+              \SI{0.1}{\mega\pascal}) \\
+              \Delta U &= \SI{20000}{\joule}
+            \end{aligned} \\
+            \Aboxed{Q &= \SI{20000}{\joule}} \\
+            \Aboxed{W &= \SI{0}{\joule}}
+          \end{align*}
+        }
+
       \item Calculate $Q$ and $W$ for the process taking state A to
         state B along the parabolic path $P = P_0 +
         \kappa\left(\frac{V}{V_0} - 1\right)^2$ where
-        $P_0 = \SI{0.01}{\mega\pascal}, V_0 = \SI{0.02}{\meter}$, and
-        $\kappa = \SI{0.04}{\mega\pascal}$
+        $P_0 = \SI{0.01}{\mega\pascal}, V_0 = \SI{0.02}{\meter\cubed}$, and
+        $\kappa = \SI{0.04}{\mega\pascal}$.
     \end{enumerate}
   \item  {[35 pts]} Consider an isolated system (no heat, matter, or
     work may cross the system boundary)
