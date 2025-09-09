@@ -10,3 +10,4 @@ _minted-main/
 svg-inkscape/
 pdflatex*
 assets/*.pdf
+main.synctex*

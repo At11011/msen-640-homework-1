@@ -15,19 +15,147 @@
 
     \begin{enumerate}[(a)]
       \item $dz = ydx - xdy$
+
+        \boxedanswersmall{
+          A differential is exact if given:
+
+          \begin{align*}
+            Z &= Z(X,Y) \tag{4.16} \\
+            dZ &= M dX + N dY \tag{4.17} \\
+          \end{align*}
+
+          then for an exact differential:
+
+          \begin{align*}
+            \left(\frac{\delta M}{\delta Y}\right)_X &=
+            \left(\frac{\delta N}{\delta X}\right)_Y \tag{4.25}
+            \label{eq:cauchy-riemann}
+          \end{align*}
+
+          In this case:
+
+          \begin{align*}
+            dz &= \overbrace{y}^{M}dx - \overbrace{x}^{N}dy \\
+            \left(\frac{\delta M}{\delta Y}\right)_X &= 1 \\
+            \left(\frac{\delta N}{\delta X}\right)_Y &= 1 \\
+            \Aboxed{1 &= 1}
+          \end{align*}
+
+          \textbf{Because \cref{eq:cauchy-riemann} is satisfied, this
+          is an exact differential.}
+
+        }
+
+        \pagebreak
+
       \item $dz = -\frac{xy}{w^2}dw + \frac{y}{w} dx + \frac{x}{w}dy$
+
+        \boxedanswersmall{
+
+          This requires three conditions to be satisfied.
+
+          \begin{align*}
+            dz &= \overbrace{-\frac{xy}{w^2}}^Mdw +
+            \overbrace{\frac{y}{w}}^N dx + \overbrace{\frac{x}{w}}^Pdy \\
+            \left(\frac{\delta M}{\delta x}\right)_{w,y} &=
+            \left(\frac{\delta N}{\delta w}\right)_{x,y} \text{
+            (First condition)}\\
+            \left(\frac{\delta M}{\delta x}\right)_{w,y} &=-\frac{y}{w^2} \\
+            \left(\frac{\delta N}{\delta w}\right)_{x,y}
+            &=-\frac{y}{w^2} \text{ (First condition satisfied)}\\
+            \left(\frac{\delta M}{\delta y}\right)_{w,x} &=
+            \left(\frac{\delta P}{\delta w}\right)_{x,y} \text{
+            (Second condition)}\\
+            \left(\frac{\delta M}{\delta y}\right)_{w,x} &= -\frac{x}{w^2} \\
+            \left(\frac{\delta P}{\delta w}\right)_{w,x} &=
+            -\frac{x}{w^2} \text{ (Second condition satisfied)}\\
+            \left(\frac{\delta N}{\delta y}\right)_{w,x} &=
+            \left(\frac{\delta P}{\delta x}\right)_{w,y} \text{
+            (Third condition)}\\
+            \left(\frac{\delta N}{\delta y}\right)_{w,x} &= \frac{1}{w} \\
+            \left(\frac{\delta P}{\delta x}\right)_{w,y} &=
+            \frac{1}{w} \text{ (Third condition satisifed)} \\
+          \end{align*}
+
+          \textbf{Because \cref{eq:cauchy-riemann} is satisfied, this
+          is also an exact differential.}
+        }
+
     \end{enumerate}
+
+    \pagebreak
+
   \item {[15 pts]} Consider the following equation:
     \begin{equation*}
-      x(t, u, v) = \frac{t^3 u^2}{1 - v}
+      z(t, u, v) = \frac{t^3 u^2}{1 - v}
     \end{equation*}
     \begin{enumerate}[(a)]
       \item If $m$ is conjugate to $t$, $n$ is conjugate to $u, p$ is
         conjugate to $v$, determine the coefficient relations.
+
+        \boxedanswersmall{
+
+          The provided conjugate pairs indicate that the differential
+          form of $z$ is:
+
+          \begin{align*}
+            dz &= m dt + n du + pdv
+          \end{align*}
+
+          Therefore, the coefficient relations are:
+
+          \begin{align*}
+            m &= \left(\frac{\delta z}{\delta t}\right)_{u, v} \\
+            n &= \left(\frac{\delta z}{\delta u}\right)_{t, v} \\
+            p &= \left(\frac{\delta z}{\delta v}\right)_{t, u}
+          \end{align*}
+        }
+
       \item Calculate $\psi(m, u, p) = z - mt - pv$: the Legendre
         transform of $z$, exchanging $t$ and $v$ for $m$ and $p$.
         Make sure that $t$ and $v$ do not appear in $\psi(m, u, p)$.
+
+        \boxedanswersmall{
+
+          \begin{align*}
+            m &= \frac{dz}{dt} = \frac{3t^2u^2}{1 - v} \\
+            t &= \sqrt{\frac{m(1-v)}{3u^2}} \\
+            p &= \frac{dz}{dv} = \frac{t^3u^2}{(1-v)^2} \\
+            v &= 1 - \sqrt{\frac{t^3u^2}{p}} \\
+            t &= \sqrt{\frac{m\left[1-\left( 1 -
+            \sqrt{\frac{t^3u^2}{p}}\right)\right]}{3u^2}} \\
+            1 - \frac{3u^2t^2}{m} &= \left( 1 -
+            \sqrt{\frac{t^3u^2}{p}}\right) \\
+            \frac{3u^2t^2}{m} &= \sqrt{\frac{t^3u^2}{p}} \\
+            \frac{9u^4t^4}{m^2} &= \frac{t^3u^2}{p} \\
+            \frac{9u^4t}{m^2} &= \frac{u^2}{p} \\
+            t &= \frac{m^2}{9pu^2} \\
+            v &= 1 - \sqrt{\frac{\left(\frac{m^2}{9pu^2}\right)^3u^2}{p}}
+          \end{align*}
+        }
+
+        \boxedanswersmall{
+          \begin{align*}
+            (1 - v)^2 &= \frac{\left(\frac{m^2}{9pu^2}\right)^3u^2}{p} \\
+            v &= 1 - \sqrt{\frac{m^6}{9^3p^4u^4}} \\
+            \psi(m, u, p) &= z - mt - pv \\
+            \Aboxed{\psi(m, u, p) &=
+              \frac{\left(\frac{m^2}{9pu^2}\right)^3u^2}{
+              - \sqrt{\frac{m^6}{9^3p^4u^4}}} -
+              \left(\frac{3\left(\frac{m^2}{9pu^2}\right)^2u^2}{-
+              \sqrt{\frac{m^6}{9^3p^4u^4}}}\right)\left(\frac{m^2}{9pu^2}\right)
+              -
+              \left(\frac{\left(\frac{m^2}{9pu^2}\right)^3u^2}{\left(-
+              \sqrt{\frac{m^6}{9^3p^4u^4}}\right)^2}\right)\left(1
+            - \sqrt{\frac{m^6}{9^3p^4u^4}}\right)}
+            \\
+          \end{align*}
+        }
+
     \end{enumerate}
+
+    \pagebreak
+
   \item {[25 pts]} A gas was determine to have an internal energy of
     the form $U = U_0 + 5PV$, where $U_0$ is a constant. Given the
     three states
@@ -61,7 +189,7 @@
     \SI{354.6}{\kilo\pascal} and the other two (A and C) are
     completely evacuated (i.e., \SI{0}{\pascal}).
 
-    \begin{figure}[h]
+    \begin{figure}[ht]
       \centering
       \includegraphics[width=0.6\textwidth]{./assets/q_4_fig.png}
     \end{figure}
